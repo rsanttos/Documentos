@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core">
 	<h:head>
@@ -12,53 +12,54 @@
 		<h:form>
 			<fieldset>
 				<h1>Dados pessoais:</h1>
-				<p> Nome completo: <h:inputText value="#{Outorgante.nome}"	size="20" 
+				<p> Nome completo: <h:inputText value="#{procuracaoMBean.outorgante.nomeCompleto}"	size="20"
 				required="true" requiredMessage="Nome: Campo obrigatório." /> </p>
-				<p>Nacionalidade: <h:inputText value="#{Outorgante.nacionalidade}" 
-				size="50" 
+				<p>Nacionalidade: <h:inputText value="#{procuracaoMBean.outorgante.nacionalidade}"
+				size="50"
 				required="true" requiredMessage="Nacionalidade: Campo obrigatório." /> </p>
-				<p> Estado civil: <h:inputText value="#{Outorgante.estadoCivil}" 
-				size="50" 
+				<p> Estado civil: <h:inputText value="#{procuracaoMBean.outorgante.estadoCivil}"
+				size="50"
 				required="true" requiredMessage="Estado civil: Campo obrigatório." /></p>
-				<p> Profissão: <h:inputText value="#{Outorgante.profissao}" 
+				<p> Profissão: <h:inputText value="#{procuracaoMBean.outorgante.profissao}"
 				size="10"
 				required="true" requiredMessage="Profissão: Campo obrigatório." />
 				</p>
-				<p>RG: <h:inputText value="#{Outorgante.rg}" 
-				size="10" 
+				<p>RG: <h:inputText value="#{procuracaoMBean.outorgante.rg}"
+				size="10"
 				required="true" requiredMessage="RG: Campo obrigatório." />
-				Órgão Expedidor: <h:inputText value="#{Outorgante.orgaoExpedidor}" 
-				size="10" 
+				Órgão Expedidor: <h:inputText value="#{procuracaoMBean.outorgante.orgaoExpedidor}"
+				size="10"
 				required="true" requiredMessage="Órgão Expedidor: Campo obrigatório." />
 				</p>
-				<p> CPF: <h:inputText value="#{Outorgante.cpf}" 
+				<p> CPF: <h:inputText value="#{procuracaoMBean.outorgante.cpf}"
 				size="10"
 				required="true" requiredMessage="CPF: Campo obrigatório." />
 				</p>
 				<h1>Dados do endereço:</h1>
-				<p> CEP: <h:inputText value="#{Outorgante.endereco.cep}" 
+<!-- 				<p> CEP: <h:inputText value="#{procuracaoMBean.outorgante.endereco.cep}"
 				size="10"
 				required="true" requiredMessage="CEP: Campo obrigatório." />
 				</p>
-				<p> Rua: <h:inputText value="#{Outorgante.endereco.rua}" 
+				<p> Rua: <h:inputText value="#{procuracaoMBean.outorgante.endereco.rua}"
 				size="10"
 				required="true" requiredMessage="Rua: Campo obrigatório." />
-				Nº: <h:inputText value="#{Outorgante.endereco.numero}" 
+				Nº: <h:inputText value="#{procuracaoMBean.outorgante.endereco.numero}"
 				size="10"
 				required="true" requiredMessage="Número da residência: Campo obrigatório." />
-				Bloco: <h:inputText value="#{Outorgante.endereco.bloco}" 
+				Bloco: <h:inputText value="#{procuracaoMBean.outorgante.endereco.bloco}"
 				size="10"/>
-				Apartamento: <h:inputText value="#{Outorgante.endereco.apartamento}" 
+				Apartamento: <h:inputText value="#{procuracaoMBean.outorgante.endereco.apartamento}"
 				size="10"/>
 				</p>
-				<p> Bairro: <h:inputText value="#{Outorgante.endereco.bairro}" 
+				<p> Bairro: <h:inputText value="#{procuracaoMBean.outorgante.endereco.bairro}"
 				size="10"
 				required="true" requiredMessage="Bairro: Campo obrigatório." />
-				</p>
+				</p> -->
 
-				<p><h:commandButton value="Cadastrar" action="#{cadastrarLinhaMBean.cadastrar}" />
-				<h:commandButton value="Voltar" action="#{cadastrarLinhaMBean.voltar}"
-				immediate="true"/> </p>
+				<p>
+					<h:commandButton value="Avancar" action="#{procuracaoMBean.cadastraDadosProcuracao()}" />
+					<!-- <h:commandButton value="Voltar" action="#{cadastrarLinhaMBean.voltar}"	immediate="true"/> --> 
+				</p>
 			</fieldset>
 		</h:form>
 	</h:body>

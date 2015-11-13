@@ -18,6 +18,7 @@ public class Pessoa implements Serializable {
 	public Endereco endereco;
 	public Pessoa() {
 		// TODO Auto-generated constructor stub
+		endereco = new Endereco();
 	}
 	public String getNomeCompleto() {
 		return nomeCompleto;

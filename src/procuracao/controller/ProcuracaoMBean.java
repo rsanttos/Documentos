@@ -1,12 +1,12 @@
 package procuracao.controller;
 
-import java.io.Serializable;
-
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import procuracao.model.Outorgado;
 import procuracao.model.Outorgante;
+
+import java.io.Serializable;
 
 @ManagedBean
 @SessionScoped

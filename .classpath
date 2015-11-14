@@ -19,6 +19,6 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itext-xtra-5.5.7.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itextpdf-5.5.7-javadoc.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itextpdf-5.5.7-sources.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itextpdf-5.5.7.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/itextpdf-5.5.7.jar" sourcepath="/home/ramon/.m2/repository/com/itextpdf/itextpdf/5.5.7/itextpdf-5.5.7-sources.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

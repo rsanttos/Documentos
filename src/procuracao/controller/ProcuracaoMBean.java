@@ -1,12 +1,17 @@
 package procuracao.controller;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.Serializable;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.itextpdf.text.DocumentException;
+
 import procuracao.model.Outorgado;
 import procuracao.model.Outorgante;
-
-import java.io.Serializable;
+import procuracao.pdf.GerenciadorPDF;
 
 @ManagedBean
 @SessionScoped
@@ -19,14 +24,18 @@ public class ProcuracaoMBean implements Serializable {
 	Outorgante outorgante;
 	Outorgado outorgado;
 	
-	public ProcuracaoMBean() {
+	GerenciadorPDF pdf;
+	
+	public ProcuracaoMBean() throws FileNotFoundException {
 		// TODO Auto-generated constructor stub
 		this.outorgante = new Outorgante();
 		this.outorgado = new Outorgado();
+		this.pdf = new GerenciadorPDF();
 	}
 	
-	public String cadastraDadosProcuracao(){
-		
+	public String cadastraDadosProcuracao() throws DocumentException, IOException{
+		this.pdf.setOutorgante(this.outorgante);
+		this.pdf.criaPDF();
 		return "/listar_dados.xhtml";
 	}
 

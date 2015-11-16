@@ -31,20 +31,17 @@ public class GerenciadorPDF {
 			
 			Paragraph p = new Paragraph("PROCURAÇÃO");
 			p.setAlignment(Element.ALIGN_CENTER);
-			this.doc.add(new Paragraph("PROCURAÇÃO"));		
+			this.doc.add(p);
 
 			Paragraph p1 = new Paragraph("Outorgante:");
+			this.doc.add(p1);
+			
 			Paragraph p2 = new Paragraph(this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
-					", "+this.outorgante.getEstadoCivil()+", residente e domiciliada na "+this.outorgante.getEndereco().getRua()+
-					this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
-					"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".");
-
-			this.doc.add(new Paragraph("Outorgante:"));
-			this.doc.add(new Paragraph(this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
-					", "+this.outorgante.getEstadoCivil()+", residente e domiciliada na "+this.outorgante.getEndereco().getRua()+
-					this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
-					"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".")
-);
+					", "+this.outorgante.getEstadoCivil()+", RG: nº "+this.outorgante.getRg()+", CPF: nº "+this.outorgante.getCpf()+
+					", residente e domiciliado na Rua "+this.outorgante.getEndereco().getRua()+
+					", nº "+this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
+					", "+this.outorgante.getEndereco().getCidade()+"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".");
+			this.doc.add(p2);
 			
 			this.doc.close();
 		

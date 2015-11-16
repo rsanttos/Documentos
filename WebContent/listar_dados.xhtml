@@ -15,12 +15,17 @@
                     <li><h:outputText value= "RG: #{procuracaoMBean.outorgante.rg}"/></li>
                     <li><h:outputText value= "Órgão Expedidor: #{procuracaoMBean.outorgante.orgaoExpedidor}"/></li>
                     <li><h:outputText value= "CPF: #{procuracaoMBean.outorgante.cpf}"/></li>
+                    <li><h:outputText value= "CEP #{procuracaoMBean.outorgante.endereco.cep}"/></li>
+                    <li><h:outputText value= "Rua: #{procuracaoMBean.outorgante.endereco.rua}"/></li>
+                    <li><h:outputText value= "Número: #{procuracaoMBean.outorgante.endereco.numero}"/></li>
+                    <li><h:outputText value= "Bairro: #{procuracaoMBean.outorgante.endereco.bairro}"/></li>
+                    <li><h:outputText value= "Cidade: #{procuracaoMBean.outorgante.endereco.cidade}"/></li>
+                    <li><h:outputText value= "Estado: #{procuracaoMBean.outorgante.endereco.estado}"/></li>
             </ul>
         </f:view>
         <h:form>
 	        <p>
 				<h:commandButton value="Voltar" action="#{procuracaoMBean.abrirFormProcuracao()}" />
-				<!-- <h:commandButton value="Voltar" action="#{cadastrarLinhaMBean.voltar}"	immediate="true"/> -->
 			</p>
 		</h:form>
     </h:body>

@@ -21,10 +21,10 @@ public class ProcuracaoMBean implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	Outorgante outorgante;
-	Outorgado outorgado;
+	public Outorgante outorgante;
+	public Outorgado outorgado;
 	
-	GerenciadorPDF pdf;
+	public GerenciadorPDF pdf;
 	
 	public ProcuracaoMBean() throws FileNotFoundException {
 		// TODO Auto-generated constructor stub
@@ -37,6 +37,10 @@ public class ProcuracaoMBean implements Serializable {
 		this.pdf.setOutorgante(this.outorgante);
 		this.pdf.criaPDF();
 		return "/listar_dados.xhtml";
+	}
+	
+	public String abrirFormProcuracao(){
+		return "/formProcuracao.xhtml";
 	}
 
 	public Outorgante getOutorgante() {

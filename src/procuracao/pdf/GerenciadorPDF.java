@@ -24,17 +24,9 @@ public class GerenciadorPDF {
 		this.os = new OutputStream(null);
 	}
 	
-//	public GerenciadorPDF(Outorgante outor) throws FileNotFoundException{
-//		this.outorgante = outor;
-//		try{
-//			this.doc = new Document(PageSize.A4, 72, 72, 72, 72);
-//			this.os = new FileOutputStream(this.outorgante.getNomeCompleto()+".pdf");
-//	}
-	
 	public void criaPDF() throws DocumentException, IOException{
 			PdfWriter.getInstance(this.doc, new FileOutputStream(this.outorgante.getNomeCompleto()+".pdf"));
-//
-//			PdfWriter.getInstance(this.doc, this.os);
+
 			this.doc.open();
 			
 			Paragraph p = new Paragraph("PROCURAÇÃO");

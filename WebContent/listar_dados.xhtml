@@ -17,5 +17,11 @@
                     <li><h:outputText value= "CPF: #{procuracaoMBean.outorgante.cpf}"/></li>
             </ul>
         </f:view>
+        <h:form>
+	        <p>
+				<h:commandButton value="Voltar" action="#{procuracaoMBean.abrirFormProcuracao()}" />
+				<!-- <h:commandButton value="Voltar" action="#{cadastrarLinhaMBean.voltar}"	immediate="true"/> -->
+			</p>
+		</h:form>
     </h:body>
 </html>

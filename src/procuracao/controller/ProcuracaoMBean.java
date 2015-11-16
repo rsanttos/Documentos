@@ -39,7 +39,8 @@ public class ProcuracaoMBean implements Serializable {
 		return "/listar_dados.xhtml";
 	}
 	
-	public String abrirFormProcuracao(){
+	public String abrirFormProcuracao() throws FileNotFoundException{
+		this.pdf = new GerenciadorPDF();
 		return "/formProcuracao.xhtml";
 	}
 

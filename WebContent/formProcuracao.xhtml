@@ -12,7 +12,7 @@
 		<h:form>
 			<fieldset>
 				<h1>Dados pessoais:</h1>
-				<p> Nome completo: <h:inputText value="#{procuracaoMBean.outorgante.nomeCompleto}"	size="20"
+				<!-- <p> Nome completo: <h:inputText value="#{procuracaoMBean.outorgante.nomeCompleto}"	size="20"
 				required="true" requiredMessage="Nome: Campo obrigatório." /> </p>
 				<p>Nacionalidade: <h:inputText value="#{procuracaoMBean.outorgante.nacionalidade}"
 				size="50"
@@ -54,11 +54,54 @@
 				<p> Bairro: <h:inputText value="#{procuracaoMBean.outorgante.endereco.bairro}"
 				size="10"
 				required="true" requiredMessage="Bairro: Campo obrigatório." />
-				</p>
+				</p> -->
+				<p> Nome completo: <h:inputText value="#{procuracaoMBean.outorgante.nomeCompleto}"  size="20"
+                requiredMessage="Nome: Campo obrigatório." /> </p>
+                <p>Nacionalidade: <h:inputText value="#{procuracaoMBean.outorgante.nacionalidade}"
+                size="50"
+                requiredMessage="Nacionalidade: Campo obrigatório." /> </p>
+                <p> Estado civil: <h:inputText value="#{procuracaoMBean.outorgante.estadoCivil}"
+                size="50"
+                requiredMessage="Estado civil: Campo obrigatório." /></p>
+                <p> Profissão: <h:inputText value="#{procuracaoMBean.outorgante.profissao}"
+                size="10"
+                requiredMessage="Profissão: Campo obrigatório." />
+                </p>
+                <p>RG: <h:inputText value="#{procuracaoMBean.outorgante.rg}"
+                size="10"
+                requiredMessage="RG: Campo obrigatório." />
+                Órgão Expedidor: <h:inputText value="#{procuracaoMBean.outorgante.orgaoExpedidor}"
+                size="10"
+                requiredMessage="Órgão Expedidor: Campo obrigatório." />
+                </p>
+                <p> CPF: <h:inputText value="#{procuracaoMBean.outorgante.cpf}"
+                size="10"
+                requiredMessage="CPF: Campo obrigatório." />
+                </p>
+                <h1>Dados do endereço:</h1>
+                <p> CEP: <h:inputText value="#{procuracaoMBean.outorgante.endereco.cep}"
+                size="10"
+                requiredMessage="CEP: Campo obrigatório." />
+                </p>
+                <p> Rua: <h:inputText value="#{procuracaoMBean.outorgante.endereco.rua}"
+                size="10"
+                requiredMessage="Rua: Campo obrigatório." />
+                Nº: <h:inputText value="#{procuracaoMBean.outorgante.endereco.numero}"
+                size="10"
+                requiredMessage="Número da residência: Campo obrigatório." />
+                Bloco: <h:inputText value="#{procuracaoMBean.outorgante.endereco.bloco}"
+                size="10"/>
+                Apartamento: <h:inputText value="#{procuracaoMBean.outorgante.endereco.apartamento}"
+                size="10"/>
+                </p>
+                <p> Bairro: <h:inputText value="#{procuracaoMBean.outorgante.endereco.bairro}"
+                size="10"
+                requiredMessage="Bairro: Campo obrigatório." />
+                </p>
 
 				<p>
 					<h:commandButton value="Avancar" action="#{procuracaoMBean.cadastraDadosProcuracao()}" />
-					<!-- <h:commandButton value="Voltar" action="#{cadastrarLinhaMBean.voltar}"	immediate="true"/> --> 
+					<!-- <h:commandButton value="Voltar" action="#{cadastrarLinhaMBean.voltar}"	immediate="true"/> -->
 				</p>
 			</fieldset>
 		</h:form>

@@ -32,14 +32,14 @@ public class GerenciadorPDF {
 //	}
 	
 	public void criaPDF() throws DocumentException, IOException{
-			PdfWriter.getInstance(this.doc, new FileOutputStream("PDF_DevMedia.pdf"));
-
-			PdfWriter.getInstance(this.doc, this.os);
+			PdfWriter.getInstance(this.doc, new FileOutputStream(this.outorgante.getNomeCompleto()+".pdf"));
+//
+//			PdfWriter.getInstance(this.doc, this.os);
 			this.doc.open();
 			
 			Paragraph p = new Paragraph("PROCURAÇÃO");
 			p.setAlignment(Element.ALIGN_CENTER);
-			this.doc.add(p);		
+			this.doc.add(new Paragraph("PROCURAÇÃO"));		
 
 			Paragraph p1 = new Paragraph("Outorgante:");
 			Paragraph p2 = new Paragraph(this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
@@ -47,8 +47,14 @@ public class GerenciadorPDF {
 					this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
 					"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".");
 
-			this.doc.add(p1);
-			this.doc.add(p2);
+			this.doc.add(new Paragraph("Outorgante:"));
+			this.doc.add(new Paragraph(this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
+					", "+this.outorgante.getEstadoCivil()+", residente e domiciliada na "+this.outorgante.getEndereco().getRua()+
+					this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
+					"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".")
+);
+			
+			this.doc.close();
 		
 	}
 

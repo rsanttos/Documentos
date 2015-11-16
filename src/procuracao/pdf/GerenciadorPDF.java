@@ -29,11 +29,14 @@ public class GerenciadorPDF {
 
 			this.doc.open();
 			
-			Paragraph p = new Paragraph("PROCURAÇÃO");
+			Paragraph p = new Paragraph("PROCURAÇÃO\n");
 			p.setAlignment(Element.ALIGN_CENTER);
+			p.setSpacingAfter(15);
 			this.doc.add(p);
+			
 
-			Paragraph p1 = new Paragraph("Outorgante:");
+			Paragraph p1 = new Paragraph("Outorgante:\n");
+			p1.setSpacingAfter(10);
 			this.doc.add(p1);
 			
 			Paragraph p2 = new Paragraph(this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
@@ -41,7 +44,21 @@ public class GerenciadorPDF {
 					", residente e domiciliado na Rua "+this.outorgante.getEndereco().getRua()+
 					", nº "+this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
 					", "+this.outorgante.getEndereco().getCidade()+"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".");
+			p2.setAlignment(Element.ALIGN_JUSTIFIED);
+			p2.setSpacingAfter(15);
 			this.doc.add(p2);
+			
+			Paragraph p3 = new Paragraph("Outorgado: ");
+			p3.setSpacingAfter(10);
+			this.doc.add(p3);
+			
+			Paragraph p4 = new Paragraph("FRANCISCO GONÇALVES MALAQUIAS, brasileiro, solteiro, nascido em 14/02/1967, "+
+						"natural de Pendências/RN, portador do RG:  nº 00.855.649, inscrito no CPF:  nº 523.926.274-87, "+ 
+						"Residente e domiciliado na Rua dos Paianazes nº 3345, apartamento-302, Condomínio Residencial Zumbi, "+
+						"bairro Bom Pastor, NATAL/RN - CEP: 59035-350.");
+			p4.setAlignment(Element.ALIGN_JUSTIFIED);
+			p4.setSpacingAfter(15);
+			this.doc.add(p4);
 			
 			this.doc.close();
 		

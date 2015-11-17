@@ -7,6 +7,7 @@
     <h1> Dados do Outorgante: </h1>
     <h:body>
         <f:view>
+            <h1>Dados pessoais:</h1>
             <ul>
                     <li><h:outputText value= "Seu nome completo: #{procuracaoMBean.outorgante.nomeCompleto}"/></li>
                     <li><h:outputText value= "Nacionalidade: #{procuracaoMBean.outorgante.nacionalidade}"/></li>
@@ -21,6 +22,18 @@
                     <li><h:outputText value= "Bairro: #{procuracaoMBean.outorgante.endereco.bairro}"/></li>
                     <li><h:outputText value= "Cidade: #{procuracaoMBean.outorgante.endereco.cidade}"/></li>
                     <li><h:outputText value= "Estado: #{procuracaoMBean.outorgante.endereco.estado}"/></li>
+            </ul>
+           	<h1>Dados do Veículo:</h1>
+           	<ul>
+                    <li><h:outputText value= "Marca: #{procuracaoMBean.veiculo.marca}"/></li>
+                    <li><h:outputText value= "Modelo: #{procuracaoMBean.veiculo.modelo}"/></li>
+                    <li><h:outputText value= "Ano de Fabricação: #{procuracaoMBean.veiculo.anoFabricacao}"/></li>
+                    <li><h:outputText value= "Ano do Modelo: #{procuracaoMBean.veiculo.modelo}"/></li>
+                    <li><h:outputText value= "Cor: #{procuracaoMBean.veiculo.cor}"/></li>
+                    <li><h:outputText value= "Categoria: #{procuracaoMBean.veiculo.categoria}"/></li>
+                    <li><h:outputText value= "Placa: #{procuracaoMBean.veiculo.placa}"/></li>
+                    <li><h:outputText value= "Renavam: #{procuracaoMBean.veiculo.renavam}"/></li>
+                    <li><h:outputText value= "Tipo de Combustível: #{procuracaoMBean.veiculo.tipoCombustivel}"/></li>
             </ul>
         </f:view>
         <h:form>

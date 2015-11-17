@@ -14,8 +14,10 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.codec.Base64.OutputStream;
 
 import procuracao.model.Outorgante;
+import procuracao.model.Veiculo;
 public class GerenciadorPDF {
 	public Outorgante outorgante;
+	public Veiculo veiculo;
 	public Document doc;
 	public OutputStream os;
 	
@@ -60,6 +62,34 @@ public class GerenciadorPDF {
 			p4.setSpacingAfter(15);
 			this.doc.add(p4);
 			
+			Paragraph p5 = new Paragraph("Outorgando-lhes: ");
+			p5.setSpacingAfter(10);
+			this.doc.add(p5);			
+			
+			Paragraph p6 = new Paragraph("Amplos poderes inerentes ao bom e fiel cumprimento deste mandato, bem como " + 
+					 "para o Fórum em Geral conforme estabelecido no Artigo nº 38 do Código Civil e os Especiais, " +
+					 "Juizado Especial Civil, Departamento Estadual de Trânsito do Rio Grande do Norte (DETRAN-RN), Secretaria de Tributação " +
+					 "do Estado  do RN, Polícia Civil, ou qualquer Repartição Pública: Federal, Estadual ou Municipal e " +
+					 "Autarquias. Assinar, solicitar todos e quaisquer que sejam documentos em relação ao veículo de marca: "+
+					 this.veiculo.getMarca() + "/"+this.veiculo.getModelo() + ", fabricado no ano de " + 
+					 this.veiculo.getAnoFabricacao() + ", com modelo de "+this.veiculo.getAnoModelo() + 
+					 ", de cor "+this.veiculo.getCor() + " e categoria "+this.veiculo.getCategoria() + ", " +
+					 " com placa: "+this.veiculo.getPlaca() + ", RENAVAM: "+this.veiculo.getRenavam() + 
+					 ", combustível: "+this.veiculo.getTipoCombustivel() + ". Bem como fazer requerimento "+
+					 "para baixar impedimento deCarteira Nacional de Habilitação (CNH); retirar 2º via de Recibo de Compra e "+
+					 "Venda (CRV); assinar recibo de CRV; liberar veiculo apreendido, transferir e receber "+ 
+					"documento. Assinar: Requerimentos, formulários, declarações, certificado de registro de veículo, recibo de transferência, "+
+					"realizar Boletim de Ocorrência (BO) junto à Polícia Civil ou Militar, termos e demais papéis necessários no trâmite e "+
+					 "no decorrer do processo admistrativo junto aos órgãos citados, pagar taxas e multas, envolvendo: "+ 
+					 "IPVA, DPVAT, LICENCIAMENTO, retirar 2º via do licenciamento do veículo acima ciatado (CRLV), emplacar, "+
+					 "assinar certificado, requerer, recorrer, manter compromisso, contrair obrigações, requerer e tomar "+ 
+					 "ciência de laudos periciais, que sejam inclusive os de desistir, transigir, fazer acordo, juntar, apresentar e "+
+					 "retirar documentos, praticar todos os demais atos que se fizerem necessários para o cumprimento deste "+ 
+					 "mandato, o que por firme e valioso. O presente mandato.");
+			p6.setAlignment(Element.ALIGN_JUSTIFIED);
+			p6.setSpacingAfter(15);
+			this.doc.add(p6);
+			
 			this.doc.close();
 		
 	}
@@ -87,4 +117,13 @@ public class GerenciadorPDF {
 	public void setOs(OutputStream os) {
 		this.os = os;
 	}
+	
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+
 }

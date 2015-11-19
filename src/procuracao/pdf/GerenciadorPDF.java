@@ -102,6 +102,22 @@ public class GerenciadorPDF {
 			p7.setSpacingAfter(15);
 			this.doc.add(p7);
 			
+			Paragraph p8 = new Paragraph("___________________________________________________________________");
+			p8.setAlignment(Element.ALIGN_CENTER);
+			this.doc.add(p8);
+			
+			Paragraph p9 = new Paragraph(this.outorgante.getNomeCompleto());
+			p9.setAlignment(Element.ALIGN_CENTER);
+			this.doc.add(p9);
+			
+			Paragraph p10 = new Paragraph("CPF: " + this.outorgante.getCpf());
+			p10.setAlignment(Element.ALIGN_CENTER);
+			this.doc.add(p10);
+			
+			Paragraph p11 = new Paragraph("Obrigatório reconhecer por autenticidade.");
+			p11.setAlignment(Element.ALIGN_CENTER);
+			this.doc.add(p11);
+			
 			this.doc.close();
 		
 	}

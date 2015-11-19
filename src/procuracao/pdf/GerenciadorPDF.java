@@ -13,15 +13,22 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.codec.Base64.OutputStream;
 
+import procuracao.model.Data;
 import procuracao.model.Outorgante;
 import procuracao.model.Veiculo;
 public class GerenciadorPDF {
 	public Outorgante outorgante;
 	public Veiculo veiculo;
+	public Data data;
+	
 	public Document doc;
 	public OutputStream os;
 	
 	public GerenciadorPDF() throws FileNotFoundException{
+		this.outorgante = new Outorgante();
+		this.veiculo = new Veiculo();
+		this.data = new Data();
+		
 		this.doc = new Document(PageSize.A4, 72, 72, 72, 72);
 		this.os = new OutputStream(null);
 	}
@@ -90,6 +97,11 @@ public class GerenciadorPDF {
 			p6.setSpacingAfter(15);
 			this.doc.add(p6);
 			
+			Paragraph p7 = new Paragraph("Natal/RN, "+ this.data.dataFormatada()+".");
+			p7.setAlignment(Element.ALIGN_RIGHT);
+			p7.setSpacingAfter(15);
+			this.doc.add(p7);
+			
 			this.doc.close();
 		
 	}
@@ -124,6 +136,14 @@ public class GerenciadorPDF {
 
 	public void setVeiculo(Veiculo veiculo) {
 		this.veiculo = veiculo;
+	}
+
+	public Data getData() {
+		return data;
+	}
+
+	public void setData(Data data) {
+		this.data = data;
 	}
 
 }

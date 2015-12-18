@@ -69,4 +69,11 @@ public class Pessoa implements Serializable {
 		this.endereco = endereco;
 	}
 
+	public void editarDados(){
+		this.setNomeCompleto(this.getNomeCompleto().toUpperCase());
+		this.getEndereco().setRua(this.getEndereco().getRua().toUpperCase());
+		this.getEndereco().setBairro(this.getEndereco().getBairro().toUpperCase());
+		this.getEndereco().setCidade(this.getEndereco().getCidade().toUpperCase());
+	}
+	
 }

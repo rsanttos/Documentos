@@ -1,4 +1,6 @@
-/*import procuracao.model.Data; 
+package procuracao.main;
+
+import procuracao.model.Data; 
 
 public class Principal { 
 	public static void main(String[] args) { 
@@ -6,4 +8,3 @@ public class Principal {
 		System.out.println(d.dataFormatada());
 	}
 }
-*/

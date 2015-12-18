@@ -5,9 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -34,7 +36,9 @@ public class GerenciadorPDF {
 	}
 	
 	public void criaPDF() throws DocumentException, IOException{
+			this.outorgante.editarDados();
 			PdfWriter.getInstance(this.doc, new FileOutputStream(this.outorgante.getNomeCompleto()+".pdf"));
+			//protected final static Font font1 = new Font(Font.UNDEFINED, 10, Font.BOLD);
 
 			this.doc.open();
 			
@@ -47,13 +51,23 @@ public class GerenciadorPDF {
 			Paragraph p1 = new Paragraph("Outorgante:\n");
 			p1.setSpacingAfter(10);
 			this.doc.add(p1);
+
+			
+/*			Paragraph p2 = new Paragraph(new Chunk(this.outorgante.getNomeCompleto(), font1) + this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
+					", "+this.outorgante.getEstadoCivil()+", RG: nº "+this.outorgante.getRg()+", CPF: nº "+this.outorgante.getCpf()+
+					", residente e domiciliado na Rua "+this.outorgante.getEndereco().getRua()+
+					", nº "+this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
+					", "+this.outorgante.getEndereco().getCidade()+"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".");
+			p2.setAlignment(Element.ALIGN_JUSTIFIED);		
+			p2.setSpacingAfter(15);
+			this.doc.add(p2);*/
 			
 			Paragraph p2 = new Paragraph(this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
 					", "+this.outorgante.getEstadoCivil()+", RG: nº "+this.outorgante.getRg()+", CPF: nº "+this.outorgante.getCpf()+
 					", residente e domiciliado na Rua "+this.outorgante.getEndereco().getRua()+
 					", nº "+this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
 					", "+this.outorgante.getEndereco().getCidade()+"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".");
-			p2.setAlignment(Element.ALIGN_JUSTIFIED);
+			p2.setAlignment(Element.ALIGN_JUSTIFIED);		
 			p2.setSpacingAfter(15);
 			this.doc.add(p2);
 			

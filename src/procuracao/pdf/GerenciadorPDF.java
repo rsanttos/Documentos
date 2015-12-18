@@ -37,7 +37,9 @@ public class GerenciadorPDF {
 	
 	public void criaPDF() throws DocumentException, IOException{
 			this.outorgante.editarDados();
-			PdfWriter.getInstance(this.doc, new FileOutputStream(this.outorgante.getNomeCompleto()+".pdf"));
+			String dir = "/Users/ramonsantos/";
+			PdfWriter.getInstance(this.doc, new FileOutputStream(dir+this.outorgante.getNomeCompleto()+".pdf"));
+			//PdfWriter.getInstance(this.doc, new FileOutputStream(this.outorgante.getNomeCompleto()+".pdf"));
 			//protected final static Font font1 = new Font(Font.UNDEFINED, 10, Font.BOLD);
 
 			this.doc.open();

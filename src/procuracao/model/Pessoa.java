@@ -71,9 +71,14 @@ public class Pessoa implements Serializable {
 
 	public void editarDados(){
 		this.setNomeCompleto(this.getNomeCompleto().toUpperCase());
+		this.setNacionalidade(this.getNacionalidade().toUpperCase());
+		this.setEstadoCivil(this.getEstadoCivil().toUpperCase());
+		this.setProfissao(this.getProfissao().toUpperCase());
+		this.setOrgaoExpedidor(this.getOrgaoExpedidor().toUpperCase());
 		this.getEndereco().setRua(this.getEndereco().getRua().toUpperCase());
 		this.getEndereco().setBairro(this.getEndereco().getBairro().toUpperCase());
 		this.getEndereco().setCidade(this.getEndereco().getCidade().toUpperCase());
+		this.getEndereco().setEstado(this.getEndereco().getEstado().toUpperCase());
 	}
 	
 }

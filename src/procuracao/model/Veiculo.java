@@ -93,6 +93,15 @@ public class Veiculo implements Serializable{
 		this.tipoCombustivel = tipoCombustivel;
 	}
 	
+	public void editarDados(){
+		this.setCategoria(this.getCategoria().toUpperCase());
+		this.setCor(this.getCor().toUpperCase());
+		this.setMarca(this.getMarca().toUpperCase());
+		this.setModelo(this.getModelo().toUpperCase());
+		this.setPlaca(this.getPlaca().toUpperCase());
+		this.setRenavam(this.getRenavam().toUpperCase());
+		this.setTipoCombustivel(this.getTipoCombustivel().toUpperCase());
+	}
 	
 
 }

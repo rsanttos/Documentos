@@ -37,6 +37,7 @@ public class GerenciadorPDF {
 	
 	public void criaPDF() throws DocumentException, IOException{
 			this.outorgante.editarDados();
+			this.veiculo.editarDados();
 			String dir = "/Users/ramonsantos/";
 			PdfWriter.getInstance(this.doc, new FileOutputStream(dir+this.outorgante.getNomeCompleto()+".pdf"));
 			//PdfWriter.getInstance(this.doc, new FileOutputStream(this.outorgante.getNomeCompleto()+".pdf"));
@@ -66,8 +67,8 @@ public class GerenciadorPDF {
 			
 			Paragraph p2 = new Paragraph(this.outorgante.getNomeCompleto()+" - "+this.outorgante.getNacionalidade()+
 					", "+this.outorgante.getEstadoCivil()+", RG: nº "+this.outorgante.getRg()+", CPF: nº "+this.outorgante.getCpf()+
-					", residente e domiciliado na Rua "+this.outorgante.getEndereco().getRua()+
-					", nº "+this.outorgante.getEndereco().getNumero()+", bairro "+this.outorgante.getEndereco().getBairro()+
+					", residente e domiciliado na RUA "+this.outorgante.getEndereco().getRua()+
+					", nº "+this.outorgante.getEndereco().getNumero()+", BAIRRO "+this.outorgante.getEndereco().getBairro()+
 					", "+this.outorgante.getEndereco().getCidade()+"/"+this.outorgante.getEndereco().getEstado()+" - CEP: "+this.outorgante.getEndereco().getCep()+".");
 			p2.setAlignment(Element.ALIGN_JUSTIFIED);		
 			p2.setSpacingAfter(15);
@@ -80,7 +81,7 @@ public class GerenciadorPDF {
 			Paragraph p4 = new Paragraph("FRANCISCO GONÇALVES MALAQUIAS, brasileiro, solteiro, nascido em 14/02/1967, "+
 						"natural de Pendências/RN, portador do RG:  nº 00.855.649, inscrito no CPF:  nº 523.926.274-87, "+ 
 						"Residente e domiciliado na Rua dos Paianazes nº 3345, apartamento-302, Condomínio Residencial Zumbi, "+
-						"bairro Bom Pastor, NATAL/RN - CEP: 59035-350.");
+						"Bairro Bom Pastor, NATAL/RN - CEP: 59035-350.");
 			p4.setAlignment(Element.ALIGN_JUSTIFIED);
 			p4.setSpacingAfter(15);
 			this.doc.add(p4);

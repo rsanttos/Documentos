@@ -78,10 +78,10 @@ public class GerenciadorPDF {
 			p3.setSpacingAfter(10);
 			this.doc.add(p3);
 			
-			Paragraph p4 = new Paragraph("FRANCISCO GONÇALVES MALAQUIAS, brasileiro, solteiro, nascido em 14/02/1967, "+
+			Paragraph p4 = new Paragraph("FRANCISCO GONÇALVES MALAQUIAS, BRASILEIRO, SOLTEIRO, nascido em 14/02/1967, "+
 						"natural de Pendências/RN, portador do RG:  nº 00.855.649, inscrito no CPF:  nº 523.926.274-87, "+ 
 						"Residente e domiciliado na Rua dos Paianazes nº 3345, apartamento-302, Condomínio Residencial Zumbi, "+
-						"Bairro Bom Pastor, NATAL/RN - CEP: 59035-350.");
+						"BAIRRO BOM PASTOR, NATAL/RN - CEP: 59035-350.");
 			p4.setAlignment(Element.ALIGN_JUSTIFIED);
 			p4.setSpacingAfter(15);
 			this.doc.add(p4);
